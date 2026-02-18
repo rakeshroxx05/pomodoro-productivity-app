@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pomodoro Productivity App</title>
+  <link rel="stylesheet" href="pomodoro.css">
+</head>
+<body>
+
+<!-- LOGIN BOX -->
+<div class="login-box" id="loginBox">
+  <h2>🔐 Login</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <button onclick="register()">Register</button>
+  <p id="loginMsg"></p>
+</div>
+
+<!-- MAIN APP -->
+<div class="app" id="appBox" style="display:none;">
+  <button class="logout" onclick="logout()">Logout</button>
+
+  <h1>🍅 Pomodoro Productivity App</h1>
+
+  <div class="timer">
+    <h2 id="mode">Work Time</h2>
+    <div id="time">25:00</div>
+    <div class="buttons">
+      <button onclick="startTimer()">Start</button>
+      <button onclick="pauseTimer()">Pause</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+  </div>
+
+  <div class="task-box">
+    <h2>📝 Tasks</h2>
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+  </div>
+
+  <div class="stats">
+    <h3>Completed Pomodoros: <span id="count">0</span></h3>
+  </div>
+
+  <div class="quote">
+    <h3>💡 Motivation</h3>
+    <p id="quoteText">Loading quote...</p>
+    <button onclick="getQuote()">New Quote</button>
+  </div>
+</div>
+
+<audio id="alarm" src="https://www.soundjay.com/buttons/sounds/beep-07.mp3"></audio>
+
+<script src="pomodoro.js"></script>
+</body>
+</html>
